@@ -1,0 +1,80 @@
+{
+  "languages": {
+    "javascript": {
+      "title": "JavaScript",
+      "slug": "javascript",
+      "description": "Modern JavaScript including ES6+, async programming, and advanced patterns",
+      "content": "# JavaScript\n\nJavaScript is a versatile, high-level programming language primarily used for web development. It's essential for creating interactive web pages and is increasingly used for server-side development with Node.js.\n\n## Key Features\n\n- **Dynamic typing**: Variables can hold values of any type\n- **First-class functions**: Functions are treated as values\n- **Prototype-based OOP**: Objects inherit from other objects\n- **Event-driven**: Excellent for handling user interactions\n\n## Getting Started\n\n```javascript\n// Variables\nlet name = 'JavaScript';\nconst version = 'ES2024';\n\n// Functions\nconst greet = (name) => `Hello, ${name}!`;\nconsole.log(greet('World'));\n\n// Async/Await\nconst fetchData = async () => {\n  const response = await fetch('/api/data');\n  return response.json();\n};\n```",
+      "examples": [
+        {
+          "title": "Array Methods",
+          "code": "const numbers = [1, 2, 3, 4, 5];\n\n// Map - transform each element\nconst doubled = numbers.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\n// Filter - select elements\nconst even = numbers.filter(n => n % 2 === 0);\n// [2, 4]\n\n// Reduce - accumulate values\nconst sum = numbers.reduce((acc, n) => acc + n, 0);\n// 15"
+        },
+        {
+          "title": "Promises",
+          "code": "// Creating a Promise\nconst myPromise = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve('Success!');\n  }, 1000);\n});\n\n// Using the Promise\nmyPromise\n  .then(result => console.log(result))\n  .catch(error => console.error(error));"
+        }
+      ],
+      "resources": [
+        { "title": "MDN JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" },
+        { "title": "JavaScript.info", "url": "https://javascript.info/" }
+      ],
+      "quiz": [
+        {
+          "question": "What is the output of typeof null?",
+          "options": ["'null'", "'undefined'", "'object'", "'boolean'"],
+          "answer": 2
+        },
+        {
+          "question": "Which keyword declares a block-scoped variable?",
+          "options": ["var", "let", "const", "Both let and const"],
+          "answer": 3
+        }
+      ]
+    },
+    "python": {
+      "title": "Python",
+      "slug": "python",
+      "description": "Python programming from basics to advanced concepts",
+      "content": "# Python\n\nPython is a high-level, interpreted programming language known for its readability and versatility. It's widely used in web development, data science, AI, and automation.\n\n## Key Features\n\n- **Clean syntax**: Easy to read and write\n- **Large standard library**: 'Batteries included' philosophy\n- **Dynamic typing**: No need to declare variable types\n- **Multiple paradigms**: Supports OOP, functional, and procedural programming\n\n## Getting Started\n\n```python\n# Variables\nname = 'Python'\nversion = 3.12\n\n# Lists and comprehensions\nnumbers = [1, 2, 3, 4, 5]\nsquares = [n**2 for n in numbers]\n\n# Functions\ndef greet(name: str) -> str:\n    return f'Hello, {name}!'\n\nprint(greet('World'))\n```",
+      "examples": [
+        {
+          "title": "Classes",
+          "code": "class Person:\n    def __init__(self, name: str, age: int):\n        self.name = name\n        self.age = age\n    \n    def greet(self) -> str:\n        return f'Hello, I am {self.name}'\n\nperson = Person('Alice', 30)\nprint(person.greet())"
+        }
+      ],
+      "resources": [
+        { "title": "Python Documentation", "url": "https://docs.python.org/3/" },
+        { "title": "Real Python", "url": "https://realpython.com/" }
+      ],
+      "quiz": [
+        {
+          "question": "What is the output of print(type([]))?",
+          "options": ["<class 'array'>", "<class 'list'>", "<class 'tuple'>", "<class 'set'>"],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "dsa": {
+    "arrays": {
+      "title": "Arrays",
+      "slug": "arrays",
+      "description": "Array data structure and common operations",
+      "content": "# Arrays\n\nArrays are fundamental data structures that store elements in contiguous memory locations. They provide O(1) access to elements by index.\n\n## Key Concepts\n\n- **Fixed size** (in many languages)\n- **Contiguous memory**\n- **O(1) access by index**\n- **O(n) insertion/deletion**\n\n## Common Operations\n\n```javascript\n// Array operations\nconst arr = [1, 2, 3, 4, 5];\n\n// Access - O(1)\narr[0]; // 1\n\n// Push - O(1) amortized\narr.push(6);\n\n// Pop - O(1)\narr.pop();\n\n// Slice - O(n)\narr.slice(1, 3); // [2, 3]\n```",
+      "examples": [
+        {
+          "title": "Two Pointers Pattern",
+          "code": "// Find if array has two numbers that sum to target\nfunction twoSum(arr, target) {\n  let left = 0;\n  let right = arr.length - 1;\n  \n  while (left < right) {\n    const sum = arr[left] + arr[right];\n    if (sum === target) return [left, right];\n    if (sum < target) left++;\n    else right--;\n  }\n  return null;\n}"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the time complexity of accessing an array element by index?",
+          "options": ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+          "answer": 0
+        }
+      ]
+    }
+  }
+}
